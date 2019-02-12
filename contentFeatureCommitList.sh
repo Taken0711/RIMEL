@@ -1,0 +1,1 @@
+git log --oneline content/public/common/content_features.h | cut -c -12
