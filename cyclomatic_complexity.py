@@ -36,10 +36,10 @@ def is_test(location, function):
     return False
 
 res = {"functions": {}, "files": {}, "global": {}}
-repo = Repo("/home/jj/src/chromium")
+repo = Repo(PATH)
 
 print("Analyzing project...")
-proc = subprocess.Popen(['lizard', PATH, '-t', '4', '-l', 'cpp'], stdout=subprocess.PIPE)
+proc = subprocess.Popen(['lizard', PATH, '-t', '4', '-l', 'cpp','--csv','-w','./whitelist.txt'], stdout=subprocess.PIPE)
 
 mode = Mode.FUNCTIONS
 
