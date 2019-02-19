@@ -91,9 +91,15 @@ with open(sys.argv[1]) as f:
     for line in f:
         commit=line[:-1]
         if not result_api.already_computed(commit):
-            paths = process_commit(commit)    
-            totalbefore = run_lizard(paths["old"])
-            totalAfter = run_lizard(paths["new"])
-            result_api.add_result(commit, {"before":totalbefore, "after": totalAfter, "diff": (totalAfter- totalbefore)})
+            try:
+                paths = process_commit(commit)    
+                totalbefore = run_lizard(paths["old"])
+                totalAfter = run_lizard(paths["new"])
+                result_api.add_result(commit, {"before":totalbefore, "after": totalAfter, "diff": (totalAfter- totalbefore)})
+            
+            except Exception as error:
+
+                print("Error when processing commit " + commit + ": "+ error.errno + " : "+ error.strerror);
+            
         else:
             print("Commit "+ commit + " already processed")  
