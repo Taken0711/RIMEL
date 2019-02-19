@@ -99,7 +99,7 @@ with open(sys.argv[1]) as f:
             
             except Exception as error:
 
-                print("Error when processing commit " + commit + ": "+ error.errno + " : "+ error.strerror);
+                print("Error when processing commit " + commit + ": "+ error);
             
         else:
             print("Commit "+ commit + " already processed")  

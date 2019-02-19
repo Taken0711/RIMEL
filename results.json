@@ -1,4 +1,9 @@
 {
+  "030e8f89a8a1": {
+    "after": 1460,
+    "before": 1458,
+    "diff": 2
+  },
   "07da7abb8328": {
     "after": 97,
     "before": 102,
@@ -89,15 +94,35 @@
     "before": 82,
     "diff": 0
   },
+  "4f7c8b0090b8": {
+    "after": 102,
+    "before": 94,
+    "diff": 8
+  },
+  "523814ca611e": {
+    "after": 82,
+    "before": 82,
+    "diff": 0
+  },
   "523efae2ae95": {
     "after": 290,
     "before": 291,
     "diff": -1
   },
+  "5c4908e8ad7f": {
+    "after": 98,
+    "before": 102,
+    "diff": -4
+  },
   "5f3aaabc6efe": {
     "after": 567,
     "before": 550,
     "diff": 17
+  },
+  "6068cf6b0b73": {
+    "after": 2005,
+    "before": 1992,
+    "diff": 13
   },
   "6081dfae2cf0": {
     "after": 277,
@@ -189,6 +214,11 @@
     "before": 10,
     "diff": 0
   },
+  "ad7c19159184": {
+    "after": 1992,
+    "before": 2005,
+    "diff": -13
+  },
   "aea5927ad74b": {
     "after": 102,
     "before": 98,
@@ -218,6 +248,11 @@
     "after": 296,
     "before": 294,
     "diff": 2
+  },
+  "e275f44c0902": {
+    "after": 94,
+    "before": 102,
+    "diff": -8
   },
   "ea23db3659d3": {
     "after": 575,
