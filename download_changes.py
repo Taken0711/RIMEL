@@ -13,8 +13,8 @@ DEBUG_LOG_ENABLE = True
 
 
 if len(sys.argv) < 2:
-    print("Usage : " + sys.argv[0] + "PATH_TO_COMMIT_LIST.txt")
-
+    print("Usage : " + sys.argv[0] + " PATH_TO_COMMIT_LIST.txt")
+    exit 
 def log(data):
     if DEBUG_LOG_ENABLE:
         print(data)
@@ -90,8 +90,10 @@ def list_modified_files(results):
 with open(sys.argv[1]) as f:
     for line in f:
         commit=line[:-1]
-        paths = process_commit(commit)    
-        totalbefore = run_lizard(paths["old"])
-        totalAfter = run_lizard(paths["new"])
-        log(commit+","+ str(totalbefore)+ ","+ str(totalAfter)+","+ str(totalAfter-totalbefore))
-        
+        if not result_api.already_computed(commit):
+            paths = process_commit(commit)    
+            totalbefore = run_lizard(paths["old"])
+            totalAfter = run_lizard(paths["new"])
+            result_api.add_result(commit, {"before":totalbefore, "after": totalAfter, "diff": (totalAfter- totalbefore)})
+        else:
+            print("Commit "+ commit + " already processed")  
